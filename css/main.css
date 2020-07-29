@@ -19,8 +19,11 @@
 
 /*Products color*/
 
+#brand{  fill: #fff;  fill-rule: evenodd; }
+
 .color-NoColor {
   fill: #eee;
+  stroke: #ddd;
 }
 
 .color-Black {
@@ -117,6 +120,10 @@
 .color-Branco {
   fill: #FFFFFF;
   background-color: #FFFFFF;
+}
+.color-Qb {
+ fill: #868789;
+ background-color: #868789;
 }
 
 /* ==========================================================================

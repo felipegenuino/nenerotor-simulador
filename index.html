@@ -83,11 +83,19 @@
       <div class="simulador__aside__body">
         <ul class="screenshot__list">
           <li class="screenshot__list__item">
-            <a class="screenshot__list__item__link" href="#">
+            <a class="screenshot__list__item__link" href="./">
               <div class="screenshot__list__item__img__inner">
-                <img class="screenshot__list__item__img" src="img/capas/model.png" alt="Nome do produto" />
+                <img class="screenshot__list__item__img" src="img/capas/model.png" alt="Vulto" />
               </div>
               <h5 class="screenshot__list__item__title"> {{messages.productName}}</h5>
+            </a>
+          </li>
+          <li class="screenshot__list__item">
+            <a class="screenshot__list__item__link" href="./havana.html">
+              <div class="screenshot__list__item__img__inner">
+                <img class="screenshot__list__item__img" src="img/capas/model.png" alt="Havana" />
+              </div>
+              <h5 class="screenshot__list__item__title"> Havana</h5>
             </a>
           </li>
         </ul>
@@ -102,7 +110,7 @@
           <div v-for="color in currentColors" :title="color.name[language]" class="color__item" :class="color.cssClass" @click="chooseColor(color)">
             <div>
               {{color.abbr[language]}}
-            </div>            
+            </div>
           </div>
         </div>
 

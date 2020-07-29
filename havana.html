@@ -1,0 +1,248 @@
+<!doctype html>
+<html class="no-js" lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Simulador</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js" integrity="sha256-/GKyJ0BQJD8c8UYgf7ziBrs/QgcikS7Fv/SaArgBcEI="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc="
+    crossorigin="anonymous"></script>
+
+  <script src="js/vendor/svgclass.js"></script>
+  <script src="js/plugins.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <main class="simulador__main" id="simulador" :class="{'simulador__aside__backdrop__body--open': sideMenuOpened}">
+
+    <header class="simulador__header shadow-lg ">
+      <a href="#" class="simulador__header__hamburguer toggle-aside" @click="toggleSideMenu">
+        <i class="material-icons">apps</i>
+      </a>
+      <!-- <a class="simulador__header__brand" href="#"> -->
+      <img class="simulador__header__brand__image" src="img/site/logo-black.png" alt="">
+      <!-- </a> -->
+      <div class="simulador__header__title">
+        <h1 class="simulador__header__title__name"> Simulador
+          <strong>Havana</strong>
+        </h1>
+      </div>
+      <div>
+        <input type="radio" value="pt-br" v-model="language" id="pt-br">
+        <label for="pt-br">PT-BR</label>
+        <input type="radio" value="en" v-model="language" id="en">
+        <label for="en">EN</label>
+      </div>
+    </header>
+
+
+    <aside class="simulador__aside" :class="{'simulador__aside--open': sideMenuOpened}">
+      <div class="simulador__aside__header">
+        <img class="simulador__aside__header__brand" src="img/site/logo.png" alt="">
+        <a href="#" class="simulador__aside__header__close toggle-aside" title="fechar" @click="toggleSideMenu">
+          <i class="material-icons">close</i>
+        </a>
+      </div>
+      <div class="simulador__aside__body">
+        <ul class="screenshot__list">
+          <li class="screenshot__list__item">
+            <a class="screenshot__list__item__link" href="./">
+              <div class="screenshot__list__item__img__inner">
+                <img class="screenshot__list__item__img" src="img/capas/model.png" alt="Vulto" />
+              </div>
+              <h5 class="screenshot__list__item__title"> {{messages.productName}}</h5>
+            </a>
+          </li>
+          <li class="screenshot__list__item">
+            <a class="screenshot__list__item__link" href="./havana.html">
+              <div class="screenshot__list__item__img__inner">
+                <img class="screenshot__list__item__img" src="img/capas/model.png" alt="Havana" />
+              </div>
+              <h5 class="screenshot__list__item__title"> Havana</h5>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="simulador__aside__backdrop toggle-aside" @click="toggleSideMenu" :class="{'simulador__aside__backdrop--open': sideMenuOpened}"></div>
+
+    <section class="simulador__content">
+      <div class="product">
+
+        <div class="color__list" v-if="choosingColor">
+          <div v-for="color in currentColors" :title="color.name[language]" class="color__item" :class="color.cssClass" @click="chooseColor(color)">
+            <div>
+              {{color.abbr[language]}}
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <?xml version="1.0" encoding="utf-8"?>
+
+
+        <svg
+          id="shadown"
+          :class="{'color__choose--closed': !choosingColor}"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 1237 672"
+          id="shadown"
+          xml:space="preserve">
+
+        <g id="inferior"  @click="editHarnessColor('body', 'inferiorBody')" :class="inferiorBody.cssClass">
+          <path id="path10" class="is__color-interactive" d="M1117.1,514.2c21.4,3.2,109.5,15.7,110.5,30.7c0.9,12.8-40,30.4-105.9,53.5
+            c-81.3,28.4-278.4,41.6-481.5,56.4c-185.9,13.6-375.2,6.9-492.2-15.1C34.4,618.4,11.6,581.5,8.8,548.7
+            c-3.4-40.1,236.3,53.6,316.4,21.6C549.5,480.7,764.5,460.7,1117.1,514.2z"/>
+          <path id="path4" class="is__color-interactive" d="M53.5,158.3c0-14.5-6-32.2-27.1-36.9c-5.3-9.4-7.6-35.7,9.9-41.8c33.7-10.2,75.1-23.6,96.8-51.4
+            c418.1,13.3,1023.1,9.2,1095.3,130.2c-72.2,120.9-677.2,116.8-1095.3,130.2c-21.7-27.9-63.2-41.3-96.8-51.4
+            c-17.6-6.2-15.2-32.4-9.9-41.8C47.5,190.6,53.5,172.8,53.5,158.3L53.5,158.3z"/>
+        </g>
+        <g id="lateral-inferior"  @click="editHarnessColor('stripe', 'inferiorStripe')" :class="inferiorStripe.cssClass">
+          <path id="path12" class="is__color-interactive" d="M326.7,610.5c167.4-125.2,594.5-115,873.5-77.6c-0.1-0.9-0.3-1.8-0.6-2.7
+            c-323.2-54-734.6-51.6-873.3,61L326.7,610.5z"/>
+          <path id="path18" class="is__color-interactive" d="M1185.1,180.4c2.8-2.6,5.5-5.6,7.8-8.8l-166,5c-89.1,2.7-665.2,63.1-699.8,102.1v0l0,0
+            c-0.2,1.5-0.4,2.9-0.4,4.4c43-26.1,581.4-92.1,704.9-96.8L1185.1,180.4L1185.1,180.4z"/>
+          <path id="path24" class="is__color-interactive" d="M1185.1,136.3c2.8,2.6,5.5,5.6,7.8,8.8l-166-5C937.8,137.4,361.7,77,327.1,38v0l0,0
+            c-0.2-1.5-0.4-2.9-0.4-4.4c43,26.1,581.4,92.1,704.9,96.8L1185.1,136.3z"/>
+        </g>
+        <g id="Front" class="color-Qb">
+          <path id="path6" d="M1040.3,79.6c68,19.4,148.9,37.3,158.6,78.7c-9.6,40.5-90.7,59.3-158.6,78.7
+            c97.5-17.6,166.6-42.6,188.2-78.7C1207,122.2,1137.8,97.2,1040.3,79.6L1040.3,79.6z"/>
+          <path id="path14"  d="M1198.6,528.4c17.3,5.5,28.6,11,29,16.5c0.9,12.8-40,30.4-105.9,53.5c-37.1,13-98.2,22.7-173,31
+            c11.8-5.6,21.7-17,37-18.8c12.5-1.5,24.7,4.3,34.1,3.4C1133.9,602.6,1212.6,549.6,1198.6,528.4L1198.6,528.4z"/>
+        </g>
+        <g id="superior" @click="editHarnessColor('body', 'superiorBody')" :class="superiorBody.cssClass">
+          <path id="path8" class="is__color-interactive" d="M1113.1,508.4c55.2,10.6,114,24.3,114.6,36.6c-1.1-15-89.2-27.5-110.5-30.7
+            c-352.6-53.5-567.6-33.5-792,56.1c-80.1,32-319.8-61.8-316.4-21.6l0-0.2c-3.4-40.1,24.3-81.1,122.1-88.3
+            c124.9-9.2,278.9-7.3,433.3-1.8C769.1,465.7,974.6,481.6,1113.1,508.4z"/>
+          <path id="path20" class="is__color-interactive" d="M1199,158.3c-0.2,0.9-0.5,1.8-0.7,2.6c-28.1,0.1-57.2,0.6-87,1.5l-139.4,6.6
+            C685,187.2,384.3,232.5,327.3,271.8c-4.9,3.1-15.3,10.9-27.5,11.2c-62.2,1.6-202.1-34.4-258.2-44.4c-25.9-5.6-20.4-30.5-15.2-43.4
+            c38,1.5,51.8-17.9,50.3-36.9c1.4-18.9-12.3-38.4-50.3-36.9C21.3,108.5,15.7,83.6,41.6,78C97.7,68,237.6,32,299.8,33.6
+            c12.2,0.3,22.6,8.1,27.5,11.2c72.5,50.1,539.9,109.7,870.9,110.9C1198.5,156.5,1198.8,157.5,1199,158.3L1199,158.3z"/>
+        </g>
+        <g id="lateral-superior" @click="editHarnessColor('stripe', 'superiorStripe')" :class="superiorStripe.cssClass">
+          <path id="path16" class="is__color-interactive" d="M1199.6,530.2c-0.2-0.6-0.5-1.1-0.8-1.7C964,471.5,473.7,443.1,324,561c1.5,10,2,20.2,2.3,30.2
+            C464.9,478.7,876.4,476.3,1199.6,530.2z"/>
+          <path id="path22" class="is__color-interactive" d="M1192.9,145.1c2.4,3.5,4.3,7.1,5.5,11.1l-174.1-2c-167.7-1.9-661.4-60.9-697-109.4
+            c0.2-2.3-0.1-4-0.2-6.8c34.6,39,610.7,99.4,699.8,102.1L1192.9,145.1L1192.9,145.1z"/>
+          <path id="path30" class="is__color-interactive" d="M1192.9,171.5c2.4-3.5,4.3-7.1,5.5-11.1l-174.1,2c-167.7,1.9-661.4,60.9-697,109.4
+            c0.2,2.3-0.1,4-0.2,6.8c34.6-39,610.7-99.4,699.8-102.1L1192.9,171.5L1192.9,171.5z"/>
+        </g>
+        <g id="base">
+          <g>
+            <path id="path26" class="st8" d="M36.8,77.5c87.3,1.9,182.4-27.4,286.8-37.6c2-0.2,5.2-3.8,3-6.6c0-20.7-82-30.8-193.5-5.2
+              C52.3,46.7,30.1,56.4,36.8,77.5z"/>
+            <path id="path28" class="st8" d="M36.8,239.1c87.3-1.9,182.4,27.4,286.8,37.6c2,0.2,5.2,3.8,3,6.6c0,20.7-82,30.8-193.5,5.2
+              C52.3,269.9,30.1,260.2,36.8,239.1L36.8,239.1z"/>
+            <g id="g34">
+              <path id="path36" class="st9" d="M325.2,570.3c1.1,12.2,1.2,25.6,1.5,40.2c-65.4,1.4-112.3-8.7-176.3-14.2
+                c6.4,19.1-7.2,42-28.7,37.8C30.7,612.3,11.3,578.8,8.8,548.7l0-0.2c-3-35.7,18.5-72,91.9-84.7l0,0
+                c33.2-5.1,200.6,46.9,213.6,68.2C320.9,542.9,323.8,555.7,325.2,570.3L325.2,570.3z"/>
+              <path id="path38" class="color-NoColor" d="M130.1,594.3c0,13.8-6.2,21.4-26.5,18.9c-29-3.6-63.7-25.1-76.4-49.6
+                C62.7,568.5,94,588.6,130.1,594.3z"/>
+            </g>
+          </g>
+        </g>
+        <g id="brand" class="brand">
+          <path   d="M659.9,584.2c-78.9,4.3-142.6-4.4-143.4-19.6c-0.8-14.9,61.5-30.5,140.4-34.8
+            c77.8-4.3,142.6,4.4,143.4,19.4C801.1,564.3,737.5,580,659.9,584.2z M707.4,558.7c-4.1,0.5-12.4,0.5-12.1-4
+            c0.4-4.8,11.4-6.1,16.9-3.2c-4.6-7.4-23.4-6.7-27.5,0.7c-1.8,3.3-1,5.9,1.3,7.9C690.4,563.8,702.1,562.4,707.4,558.7L707.4,558.7z
+             M707.4,561c-5.2,3-23.4,6-26.2-3.5c-0.9-2.9,0.9-6.6,5-9.1c-5.4,1.7-15.8,6.8-8.3,14.5c8.3,8.4,56.3,3.1,55.7-14.4
+            c-0.4-11.2-21.9-14.4-29.8-15.8c18.2,0.3,91,0.6,91.9,16.8c1,17.4-85.7,23.4-112.3,25.1c-19.5,1.3-46,3.1-65-2.1
+            c-12.8-3.5-16-12.6-6.6-18.8c6.9-4.6,18.9-4.4,23.6,0.6c3.9,4.2,2.6,8.7-1.9,11.9c8.3-2.7,13.3-9.1,8.7-13.6
+            c-6.6-6.5-17.6-6.9-29.9-5.7c-10.4,1-27.6,8.3-25.6,20.5c1.1,6.7,10.9,12.5,24.5,14.3c-20.1-0.6-90.3-2.4-91.1-17
+            c-0.9-16.3,77.6-24.5,118.2-26c22.9-0.9,53.6-1.1,69.1,6.3C717.1,549.5,715.1,556.6,707.4,561L707.4,561z M678.8,551.9l1.4-1
+            l2.7-6.8l-36.4,2l-3.1,7.7l8.1-0.4l-6.3,15.8l19.3-1.1l6.3-15.8L678.8,551.9L678.8,551.9z M730.1,564.5l18.2-1l3.2-7.9l5.8,7.4
+            l19.4-1.1l-7.8-9c6.3-0.2,10.8-1.7,11.8-7.1c0.8-4.2-3.1-7-8.7-6.7l-32.4,1.8L730.1,564.5L730.1,564.5z M610.3,563.7
+            c6.1,0.9,13.6-0.5,14.1-4.7c0.4-2.9-4.2-5.5-12.4-4.5c9.6-7,27.9-1.6,22.5,7C632,565.7,617.5,570.7,610.3,563.7z M753.5,550.4
+            c0.6-1.5,1.2-3,1.8-4.5l5.9-0.3c3-0.3,1.7,4.3-1.4,4.4L753.5,550.4L753.5,550.4z M538.5,575l18.2-1l3.2-7.9l5.8,7.4l19.5-1.1
+            l-7.9-9c6.3-0.2,10.8-1.7,11.8-7.1c0.8-4.2-3.1-7-8.7-6.7l-32.4,1.8L538.5,575z M561.9,560.9c0.6-1.5,1.2-3,1.8-4.5l5.9-0.3
+            c3-0.3,1.7,4.3-1.4,4.4L561.9,560.9z"/>
+        </g>
+        </svg>
+
+
+
+
+
+
+
+
+
+      <div class="info">
+        <div class="info__card card shadow-lg" :class="{'is_active': summaryOpened}">
+          <div class="card-header" @click="summaryOpened = !summaryOpened">
+            {{messages.summary.title}}
+          </div>
+          <div class="card-body">
+            <p class="card-text"> {{messages.summary.info}}</p>
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item mute">
+              <strong>{{messages.summary.superiorBody}}: </strong> {{superiorBody.name[language]}} </li>
+            <li class="list-group-item">
+              <strong>{{messages.summary.superiorStripe}}</strong> {{superiorStripe.name[language]}} </li>
+            <li class="list-group-item">
+              <strong>{{messages.summary.inferiorStripe}}:</strong> {{inferiorStripe.name[language]}} </li>
+            <li class="list-group-item">
+              <strong>{{messages.summary.inferiorBody}}:</strong> {{inferiorBody.name[language]}} </li>
+          </ul>
+          <div class="card-footer text-center">
+            <button type="button" class="btn btn-outline-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
+      <!-- //info -->
+
+    </section>
+
+  </main>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
