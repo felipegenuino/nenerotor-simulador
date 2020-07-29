@@ -456,6 +456,18 @@ textarea {
   font-weight: 300;
 }
 
+
+
+.simulador__header__language-selector{ margin-left: auto;  margin-right: 30px;}
+.simulador__header__language-selector input{ display: none;}
+.simulador__header__language-selector label{ cursor: pointer;}
+.simulador__header__language-selector img{}
+.simulador__header__language-selector input[type="radio"] + label {opacity: 0.3;}
+.simulador__header__language-selector input[type="radio"]:checked + label {  opacity: 1; }
+
+
+
+
 /* .simulador__main {} */
 
 .simulador__content {
@@ -572,6 +584,12 @@ textarea {
 .select2-container {
   z-index: 1070;
 }
+
+
+
+
+
+
 
 /*Produto*/
 

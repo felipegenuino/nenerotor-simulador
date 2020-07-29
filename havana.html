@@ -64,11 +64,15 @@
           <strong>Havana</strong>
         </h1>
       </div>
-      <div>
+      <div class="simulador__header__language-selector">
         <input type="radio" value="pt-br" v-model="language" id="pt-br">
-        <label for="pt-br">PT-BR</label>
-        <input type="radio" value="en" v-model="language" id="en">
-        <label for="en">EN</label>
+        <label for="pt-br" data-toggle="tooltip" title="Idioma em Português">
+          <img src="img/site/lang-ptbr.svg" alt="Flag pt-br">
+        </label>
+        <input type="radio" value="en" v-model="language" id="en" title="English language">
+        <label for="en"   title="Select to english">
+          <img src="img/site/lang-eng.svg" alt="Flag EN">
+        </label>
       </div>
     </header>
 
